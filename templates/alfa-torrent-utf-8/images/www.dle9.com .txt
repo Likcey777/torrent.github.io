@@ -1,0 +1,195 @@
+                 <<<<DataLife Engine v.10-9.x Final Release>>>>
+
+Downloaded from http://www.dle9.com
+Информация с http://www.dle9.com 
+Большой выбор бесплатных шаблонов, скриптов и модулей....
+PDS логотипы, программы и многое другое... 
+           <<<<Создайте свой уникальный сайт вместе с нами!>>>
+Спасибо за внимание и выбор!
+
+
+
+
+
+Изменения между версиями 10.3 и 10.4
+1. Из стандартного шаблона в архиве дистрибутива скопируйте файлы /images/like.png, images/ratingplus.png, images/ratingminus.png в аналогичную папку вашего шаблона.
+2. В общей папке шаблонов /templates/ создайте файл rss.tpl с содержимым:
+
+[shortrss]<item>
+<title>{title}</title>
+<guid isPermaLink="true">{rsslink}</guid>
+<link>{rsslink}</link>
+<description>{short-story}</description>
+<category>{category}</category>
+<dc:creator>{rssauthor}</dc:creator>
+<pubDate>{rssdate}</pubDate>
+</item>[/shortrss]
+[fullrss]<item>
+<title>{title}</title>
+<guid isPermaLink="true">{rsslink}</guid>
+<link>{rsslink}</link>
+<description><![CDATA[{short-story}]]></description>
+<category><![CDATA[{category}]]></category>
+<dc:creator>{rssauthor}</dc:creator>
+<pubDate>{rssdate}</pubDate>
+</item>[/fullrss]
+[yandexrss]<item>
+<title>{title}</title>
+<link>{rsslink}</link>
+<description>{short-story}</description>
+<category>{category}</category>{images}
+<pubDate>{rssdate}</pubDate>
+<yandex:full-text>{full-story}</yandex:full-text>
+</item>[/yandexrss]
+
+
+3. Откройте файл style/engine.css в самый низ добавьте:
+
+.ratingzero {
+ color: #6c838e;
+}
+
+.ratingtypeplusminus {
+ padding: 0px 5px;
+}
+
+.ratingtypeplus {
+ color: #6c838e;
+ padding: 0px 0px 0px 5px;
+}
+
+.ratingplus {
+ color: green;
+}
+
+.ratingminus {
+ color: red;
+}
+
+4. Откройте файл style/styles.css в самый низ добавьте:
+
+.ratebox2 {
+ float: right;
+}
+
+.ratebox3 {
+ float: right;
+}
+
+.ratebox ul, .ratebox ul li {
+ float: left;
+}
+
+.ratebox2 ul, .ratebox2 ul li {
+ float: left;
+}
+
+.ratebox3 ul, .ratebox3 ul li {
+ float: left;
+}
+
+5. Откройте файл comments.tpl и в нужное вам место добавьте поддержку в них рейтинга:
+
+[rating]
+    [rating-type-1]<div class="ratebox"><div class="rate">{rating}</div></div>[/rating-type-1]
+    [rating-type-2]<div class="ratebox2">
+    <ul class="reset">
+      <li>[rating-plus]<img src="{THEME}/images/like.png" title="Нравится" alt="Нравится" style="width:14px;" />[/rating-plus]</li>
+      <li>{rating}</li>
+    </ul></div>[/rating-type-2]
+    [rating-type-3]<div class="ratebox3">
+    <ul class="reset">
+      <li>[rating-minus]<img src="{THEME}/images/ratingminus.png" title="Не нравится" alt="Не нравится" style="width:14px;" />[/rating-minus]</li>
+      <li>{rating}</li>
+      <li>[rating-plus]<img src="{THEME}/images/ratingplus.png" title="Нравится" alt="Нравится" style="width:14px;" />[/rating-plus]</li>
+    </ul>
+    </div>[/rating-type-3]
+[/rating]
+
+
+6. Откройте файл fullstory.tpl найдите в нем:
+
+[rating]<div class="ratebox"><div class="rate">{rating}</div></div>[/rating]
+
+
+Замените на:
+
+[rating]
+  [rating-type-1]<div class="ratebox"><div class="rate">{rating}</div></div>[/rating-type-1]
+  [rating-type-2]<div class="ratebox2">
+      <ul class="reset">
+      <li>[rating-plus]<img src="{THEME}/images/like.png" title="Нравится" alt="Нравится" style="width:14px;" />[/rating-plus]</li>
+      <li>{rating}</li>
+      </ul></div>[/rating-type-2]
+  [rating-type-3]<div class="ratebox3">
+      <ul class="reset">
+        <li>[rating-minus]<img src="{THEME}/images/ratingminus.png" title="Не нравится" alt="Не нравится" style="width:14px;" />[/rating-minus]</li>
+        <li>{rating}</li>
+        <li>[rating-plus]<img src="{THEME}/images/ratingplus.png" title="Нравится" alt="Нравится" style="width:14px;" />[/rating-plus]</li>
+      </ul>
+      </div>[/rating-type-3]
+[/rating]
+
+
+7. Откройте файл searchresult.tpl найдите в нем:
+
+[rating]<div class="ratebox"><div class="rate">{rating}</div></div>[/rating]
+
+
+Замените на:
+
+[rating]
+  [rating-type-1]<div class="ratebox"><div class="rate">{rating}</div></div>[/rating-type-1]
+  [rating-type-2]<div class="ratebox2">
+      <ul class="reset">
+      <li>[rating-plus]<img src="{THEME}/images/like.png" title="Нравится" alt="Нравится" style="width:14px;" />[/rating-plus]</li>
+      <li>{rating}</li>
+      </ul></div>[/rating-type-2]
+  [rating-type-3]<div class="ratebox3">
+      <ul class="reset">
+        <li>[rating-minus]<img src="{THEME}/images/ratingminus.png" title="Не нравится" alt="Не нравится" style="width:14px;" />[/rating-minus]</li>
+        <li>{rating}</li>
+        <li>[rating-plus]<img src="{THEME}/images/ratingplus.png" title="Нравится" alt="Нравится" style="width:14px;" />[/rating-plus]</li>
+      </ul>
+      </div>[/rating-type-3]
+[/rating]
+
+
+8. Откройте файл shortstory.tpl найдите в нем:
+
+[rating]<div class="ratebox"><div class="rate">{rating}</div></div>[/rating]
+
+
+Замените на:
+
+[rating]
+  [rating-type-1]<div class="ratebox"><div class="rate">{rating}</div></div>[/rating-type-1]
+  [rating-type-2]<div class="ratebox2">
+      <ul class="reset">
+      <li>[rating-plus]<img src="{THEME}/images/like.png" title="Нравится" alt="Нравится" style="width:14px;" />[/rating-plus]</li>
+      <li>{rating}</li>
+      </ul></div>[/rating-type-2]
+  [rating-type-3]<div class="ratebox3">
+      <ul class="reset">
+        <li>[rating-minus]<img src="{THEME}/images/ratingminus.png" title="Не нравится" alt="Не нравится" style="width:14px;" />[/rating-minus]</li>
+        <li>{rating}</li>
+        <li>[rating-plus]<img src="{THEME}/images/ratingplus.png" title="Нравится" alt="Нравится" style="width:14px;" />[/rating-plus]</li>
+      </ul>
+      </div>[/rating-type-3]
+[/rating]
+
+
+9. Откройте файл userinfo.tpl найдите в нем:
+
+<div class="ratebox"><div class="rate">{rate}</div><span>Рейтинг:</span></div>
+
+
+Замените на:
+
+[rating-type-1]<div class="ratebox"><div class="rate">{rate}</div><span>Рейтинг:</span></div>[/rating-type-1]
+[rating-type-2]<div class="ratebox2"><span>Рейтинг:</span> {rate}</div>[/rating-type-2]
+[rating-type-3]<div class="ratebox2"><span>Рейтинг:</span> {rate}<span></div>[/rating-type-3]
+
+
+На этом все!
+

@@ -1,0 +1,1 @@
+<div class="more-link"><a href="{full-link}"><span class="fa fa-random"></span> Случайный фильм</a></div>

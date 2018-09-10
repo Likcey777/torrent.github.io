@@ -1,0 +1,66 @@
+/* sbros i obshee
+----------------------------------------------- */
+
+html,body,div,span,object,iframe,frame,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,a,b,i,dl,dt,dd,ol,ul,li,fieldset,textarea,select,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video,input {
+	background: transparent;margin:0;padding:0;outline:none;border: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+   box-sizing: border-box;
+}
+input, label, button, form {background: transparent;margin:0;padding:0;outline:none;border: 0;}
+   
+ol, ul {list-style:none;}
+blockquote, q {quotes:none;}
+table {border-collapse:collapse;border-spacing:0;}
+input, select {vertical-align:middle;}
+
+article, aside, figure, figure img, hgroup, footer, header, nav, section {display: block;}
+
+body { font: 14px Tahoma, Geneva, sans-serif; line-height:normal; padding:0; margin:0;        
+color: #000; background:#000 url(../images/bg.jpg) center top fixed; background-size:100% auto;
+height:100%; width:100%; font-weight:400;}
+   
+img {max-width:100%;}
+.clr {clear: both;}
+.clearfix:after {content: ""; display: table; clear: both;}
+
+a {color: #2a2a2a; text-decoration: none;}
+a:hover, a:focus {color:#06c; text-decoration: none;}
+
+h1,h2,h3,h4,h5,h6 {font-weight: normal;}
+h1 {font-size:24px;}
+h2 {font-size:24px;}
+h3 {font-size:21px;}
+
+.form-wrap {margin:0}
+.sub-title h1 {margin-bottom:15px; font-size:24px;}
+.pm-page, .search-page, .static-page, .tags-page {}
+.tags-page a {margin-bottom:10px;}
+.tags-page a:hover {color:#fff !important;}
+
+/*--- obshee knopki polya---*/
+
+textarea { overflow: auto; vertical-align: top }
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {cursor:pointer; border-radius:4px; 
+display:inline-block; padding:0 15px; line-height:40px; height:40px;}
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0 }
+button[disabled], input[disabled] { cursor: default }
+button:hover, html input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover {}
+button:active, html input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:active {
+  box-shadow: inset 0 1px 4px 0 rgba(0,0,0,0.1);}
+input[type="submit"].bbcodes, input[type="button"].bbcodes, input.bbcodes, .ui-button { font-weight: normal; font-size: 12px !important; 
+height: 30px !important; line-height:30px !important; padding: 0px 10px; background-color:#ce1025; border-radius:3px; 
+box-shadow:none; border:0; text-shadow:none;}
+
+input[type="text"] {display:block; width:100%; height:38px; line-height:38px; padding:0 15px;
+color:#000000; background-color:#fff; border:1px solid #ccc; border-radius:3px;}
+input[type="text"]:focus {background-color:#ffffff; border-color:#04a2dc; box-shadow:0 0 10px 0 rgba(4,162,220,0.5);}
+
+input:focus::-webkit-input-placeholder {color: transparent}
+input:focus::-moz-placeholder {color: transparent}
+input:focus:-moz-placeholder {color: transparent}
+input:focus:-ms-input-placeholder {color: transparent} 
+
+table.userstop, table.pm, table.tableform, table.calendar { border-collapse: collapse; border-spacing: 0 }
+.ui-icon, .close { display: block; overflow: hidden; text-indent: -9999px; white-space: nowrap; }

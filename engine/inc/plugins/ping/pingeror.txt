@@ -1,0 +1,3 @@
+http://api.moreover.com/ping?u=http://go-anonym.ml/sitemap.xml
+http://www.submissions.ask.com/ping?sitemap=http://go-anonym.ml/sitemap.xml
+http://search.yahooapis.com/SiteExplorerService/V1/updateNotification?appid=YahooDemo&url=http://go-anonym.ml/sitemap.xml

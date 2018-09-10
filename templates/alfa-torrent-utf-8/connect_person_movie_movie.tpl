@@ -1,0 +1,1 @@
+[cpm_list][is_post][full-link]{title}[/full-link][/is_post][/cpm_list]

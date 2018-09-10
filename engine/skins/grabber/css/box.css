@@ -1,0 +1,47 @@
+.tzCheckBox{
+	background:url('../images/gro.png') no-repeat right bottom;
+	display:inline-block;
+	min-width:65px;
+	height:20px;
+	white-space:nowrap;
+	position:relative;
+	cursor:pointer;
+	margin-left:14px;
+}
+
+.tzCheckBox.checked{
+	background-position:top left;
+	margin:0 14px 0 0;
+}
+
+.tzCheckBox .tzCBContent{
+color: black;
+z-index:1;
+font-size:14px;
+font-family:Helvetica Neue,Arial,Helvetica,sans-serif;
+/*text-transform:uppercase;*/
+padding-right: 38px;
+font-weight: bold;
+text-align: right;
+line-height: 20px;
+}
+
+.tzCheckBox.checked .tzCBContent{
+	color: white;
+	padding:0 0 0 43px;
+}
+
+.tzCBPart{
+	background:url('../images/gro.png') no-repeat left bottom;
+	width:14px;
+	position:absolute;
+	left:-14px;
+	height:20px;
+	overflow: hidden;
+}
+
+.tzCheckBox.checked .tzCBPart{
+	background-position:top right;
+	left:auto;
+	right:-14px;
+}
